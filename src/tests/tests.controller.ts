@@ -1,10 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { TestDto } from 'src/dtos/test.dto';
 import { Test } from 'src/entities/test.entity';
 import { DeleteResult, UpdateResult } from 'typeorm';
 import { TestsService } from './tests.service';
 
 @Controller('tests')
+@ApiTags('테스트 API')
 export class TestsController {
   constructor(private testsService: TestsService) {}
 
