@@ -1,7 +1,12 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // Entities
-import { Test } from '../entities/test.entity';
+import { Comment } from 'src/entities/comment.entity';
+import { CommentLike } from 'src/entities/commentLike.entity';
+import { Post } from 'src/entities/post.entity';
+import { PostLike } from 'src/entities/postLike.entity';
+import { Tag } from 'src/entities/tag.entity';
+import { User } from 'src/entities/user.entity';
 
 export const typeOrmModuleOptions = (): TypeOrmModuleOptions => ({
   type: 'mysql',
@@ -10,6 +15,6 @@ export const typeOrmModuleOptions = (): TypeOrmModuleOptions => ({
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [Test],
+  entities: [User, Post, Comment, Tag, PostLike, CommentLike],
   synchronize: false,
 });

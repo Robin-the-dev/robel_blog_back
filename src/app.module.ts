@@ -5,7 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
 // Modules
-import { TestsModule } from './tests/tests.module';
+import { UsersModule } from './users/users.module';
+import { PostsModule } from './posts/posts.module';
 
 // Configs
 import { typeOrmModuleOptions } from './config/typeorm.config';
@@ -22,7 +23,8 @@ import { typeOrmModuleOptions } from './config/typeorm.config';
     TypeOrmModule.forRoot(typeOrmModuleOptions()),
 
     // Modules
-    TestsModule,
+    UsersModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
