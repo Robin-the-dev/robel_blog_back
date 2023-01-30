@@ -14,6 +14,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
+  // CORS 설정
+  app.enableCors();
+
   // Port 설정
   const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
