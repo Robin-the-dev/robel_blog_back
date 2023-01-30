@@ -24,6 +24,13 @@ export class PostsController {
     return posts;
   }
 
+  @Get(':id')
+  async getPost(@Param('id') id: string): Promise<PostEntity> {
+    const post = await this.postsService.getPost(id);
+
+    return post;
+  }
+
   @Put(':id')
   async updatePost(@Param('id') id: string, @Body() body: UpdatePostDto): Promise<any> {
     const result = await this.postsService.updatePost(id, body);
