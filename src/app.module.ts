@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 // Modules
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
+import { CommentsModule } from './comments/comments.module';
 
 // Configs
 import { typeOrmModuleOptions } from './config/typeorm.config';
@@ -25,6 +26,7 @@ import { typeOrmModuleOptions } from './config/typeorm.config';
     // Modules
     UsersModule,
     PostsModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
