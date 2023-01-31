@@ -9,6 +9,6 @@ export class Tag {
   @Column('char', { length: 20 })
   name!: string;
 
-  @ManyToOne((type) => Post, (post) => post.tags)
+  @ManyToOne((type) => Post, (post) => post.tags, { onDelete: 'CASCADE' })
   post: Post;
 }

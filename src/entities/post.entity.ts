@@ -39,7 +39,7 @@ export class Post {
   @OneToMany((type) => Comment, (comment) => comment.post)
   comments: Comment[];
 
-  @OneToMany((type) => Tag, (tag) => tag.post)
+  @OneToMany((type) => Tag, (tag) => tag.post, { cascade: true })
   tags: Tag[];
 
   @OneToMany((type) => PostLike, (postLike) => postLike.post)
