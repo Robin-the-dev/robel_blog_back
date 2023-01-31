@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsString } from 'class-validator';
+import { ArrayNotEmpty, IsArray, IsString } from 'class-validator';
 
 export class CreatePostDto {
   @ApiProperty({ description: '유저 ID' })
@@ -16,6 +16,7 @@ export class CreatePostDto {
 
   @ApiProperty({ description: '태그' })
   @IsArray()
+  @ArrayNotEmpty()
   @IsString({ each: true })
   tags: string[];
 }
